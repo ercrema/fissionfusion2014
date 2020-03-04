@@ -1,19 +1,3 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%       DISCUSSION  AND  CONCLUSIONS             %
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\FloatBarrier
-\pagebreak
-\chapter{ABM Code}
-\renewcommand{\thesection}{C.\arabic{section}}
-
-\section{Disturbance-free Model}
-
-All versions of the agent-based models are written in R statistical computing language and can be executed once all scripts are sourced. The main function {\ttfamily FF()} will require a series of sub-functions ({\ttfamily initialise()}, {\ttfamily evaluateFitness()}, {\ttfamily repDeath()}, {\ttfamily fissionfusion()}) for its execution. 
-
-\subsubsection{FF()}
-
-\scriptsize{
-  \begin{verbatim}
   #
   # *disturbance free model*
   # 
@@ -100,10 +84,7 @@ All versions of the agent-based models are written in R statistical computing la
   
   
   
-  \subsubsection{initialise()}
-  
-  \scriptsize{
-    \begin{verbatim}
+
     # Initialise function
     # Reads P (...square root of the Patch number), ini (... the initial number of agents),
     # and K (...the resource input size)
@@ -163,13 +144,7 @@ All versions of the agent-based models are written in R statistical computing la
       return(list(agentSet = agentSet, groupSpace = groupSpace, world = world))
     }
     
-    \end{verbatim}
-  }
-  
-  \subsubsection{evaluateFitness()}
-  
-  \scriptsize{
-    \begin{verbatim}
+
     # evaluateFitness function
     # input: groupSpace, mu, b, sigma
     # outputs:groupSpace (updated)
@@ -195,13 +170,9 @@ All versions of the agent-based models are written in R statistical computing la
       
       return(groupSpace)
     }
-    \end{verbatim}
-  }
+
   
-  \subsubsection{repDeath()}
-  
-  \scriptsize{
-    \begin{verbatim}
+
     # repDeath function
     # Inputs: groupSpace, mu, r, omega1 and omega2
     # Exports:  groupSpace (updated)
@@ -240,13 +211,8 @@ All versions of the agent-based models are written in R statistical computing la
       return(groupSpace)
       
     }
-    
-    \end{verbatim}
-  }
-  
-  \subsubsection{fissionfusion()}
-  \scriptsize{
-    \begin{verbatim}
+
+
     # inputs ...groupSpace, k,c1,c2,c3,s,h,P,z
     # outputs.... updated groupSpace
     # reverse dependencies ...FF()
@@ -572,17 +538,8 @@ All versions of the agent-based models are written in R statistical computing la
       return(groupSpace)
     }
     
-    \end{verbatim}
-  }
+
   
-  
-  \section{Predator-prey model}
-  \normalsize{The predator-prey version of the model is based on a slightly modified version of the main function {\ttfamily FF()}, along with a modified version of {\ttfamily evaluateFitness()} and the addition of the new sub-function {\ttfamily regenerateResources()}.}
-  
-  \subsubsection{FF2()}
-  
-  \scriptsize{
-    \begin{verbatim}
     #
     # *Predator-prey model model*
     # 
@@ -654,10 +611,7 @@ All versions of the agent-based models are written in R statistical computing la
       \end{verbatim}
     }
     
-    \subsubsection{evaluateFitness2()}
-    
-    \scriptsize{
-      \begin{verbatim}
+
       # evaluateFitness function
       # input: groupSpace, mu, b, sigma, baseline
       # output: groupSpace (updated)
@@ -688,12 +642,7 @@ All versions of the agent-based models are written in R statistical computing la
         return(groupSpace)
       }
       
-      \end{verbatim}
-      
-      
-      \subsubsection{regenerateResources()}
-      \scriptsize{
-        \begin{verbatim}
+   
         # regenerateResources function
         # input: groupSpace, KMax, gR
         # output: groupSpace (updated)
@@ -708,22 +657,11 @@ All versions of the agent-based models are written in R statistical computing la
           groupSpace$T <- 0 ;
           return(groupSpace)  
         }
-        \end{verbatim}
+
         
-        
-        
-        
-        
-        \section{Exogenic Disturbance Model}
-        \normalsize{The exogenic disturbance model is also based on a slightly modified version of the main function {\ttfamily FF()}.}
-        
-        
-        \subsubsection{FF3()}
-        
-        \scriptsize{
-          \begin{verbatim}
+     
           #
-          # *disturbance free model*
+          # *exogenic disturbance model*
           # 
           #
           # Additional MODEL PARAMETERS:
@@ -731,7 +669,7 @@ All versions of the agent-based models are written in R statistical computing la
           #
           #
           
-          FF <- function(ini = 10, P = 10, K = 200, mu = 10, c1 = 3, c2 = 3, c3 = 0, c4 = 0,
+          FF3 <- function(ini = 10, P = 10, K = 200, mu = 10, c1 = 3, c2 = 3, c3 = 0, c4 = 0,
                          k = 1, b = 0.5, sigma = 1, timesteps = 300, r = 0.05,
                          omega1 = 1.0, omega2 = 5, size = P, h = 1 , s = 1,
                          z = 1, run = 1,  Kseq=c(rep(200,299),
