@@ -56,8 +56,7 @@ FF <- function(ini = 10, P = 10, K = 200, Kseq=NA, mu = 10, c = 3,k = 1, b = 0.5
     groupSpace <- evaluateFitness(groupSpace, mu = mu, b = b, sigma = sigma);   
     
     # STEP2 Reproduction & Death:
-    groupSpace <- repDeath(groupSpace = groupSpace, mu = mu, r = r, omega1 = omega1,
-                           omega2 = omega2);
+    groupSpace <- repDeath(groupSpace = groupSpace, mu = mu, r = r, omega1 = omega1, omega2 = omega2);
     
     #Loophole in case of extinction: 
     if(sum(groupSpace$groupSize) == 0)
