@@ -1,7 +1,7 @@
 # R code for Group Fission-Fusion Agent-Based Model
 This repository contains the R scripts for the Fission-Fusion Agent-Based Model explored in
 
-Crema, E.R., 2014. [A simulation model of fission-fusion dynamics and long-term settlement change.](https://doi.org/10.1007/s10816-013-9185-4). Journal of Archaeological Method and Theory 21, 385–404
+Crema, E.R., 2014. [A simulation model of fission-fusion dynamics and long-term settlement change](https://doi.org/10.1007/s10816-013-9185-4). Journal of Archaeological Method and Theory 21, 385–404
 
 and originally featured on my doctoral thesis:
 
