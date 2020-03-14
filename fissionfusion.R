@@ -19,7 +19,6 @@
 #'@return A matrix of group sizes with dimensions P and timesteps + 2. The first two columns contains the coordinates of each cell, and the remaining columns contain the number of agents occupying a given cell at a particular timestep.
 #'@references 
 #' Crema, E.R., 2014. A simulation model of fission-fusion dynamics and long-term settlement change. Journal of Archaeological Method and Theory 21, 385–404.
-#' Crema, E.R., 2015. Modelling Settlement Rank-Size Fluctuations, in: Wurzer, G., Kowarik, K., Reschreiter, H. (Eds.), Agent-Based Modeling and Simulation in Archaeology, Advances in Geographic Information Science. Springer International Publishing, pp. 161–181. https://doi.org/10.1007/978-3-319-00008-4_8
 #' @examples
 #' set.seed(1)
 #' x = FF(timesteps=500,k=0.5)
